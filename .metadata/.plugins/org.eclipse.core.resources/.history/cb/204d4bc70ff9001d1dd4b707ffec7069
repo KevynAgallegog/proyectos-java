@@ -1,0 +1,26 @@
+import javax.swing.JOptionPane;
+
+public class Horas {
+	public static void main(String arg[]) {
+		
+		int n=Integer.parseInt(JOptionPane.showInputDialog("Ingrese las veeces que lo quiere repetir"));
+		
+		for (int i = 0; i <= n; i++) {
+			
+			String documento=JOptionPane.showInputDialog("Ingrese el documento");
+			String nombre=JOptionPane.showInputDialog("Ingrese el nombre ");
+			int horas=Integer.parseInt(JOptionPane.showInputDialog("Ingrese las horas trabajadas"));
+			int pago=horas*2000;
+			double pagoFinal=pago-0.10;
+			
+			System.out.println("Nombre: "+nombre + "\n"+
+			"Documento: "+documento+ "\n"
+			+"Horas trabajadas: "+horas+"\n"
+			+"Total pago con inpuessto: "+pagoFinal);
+			
+			
+			
+			
+		}
+	}
+}

@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+
+public class Empleados {
+	public static void main(String arg[]) {
+		
+		String categoria;
+		String pago;
+		
+		
+		do {
+			categoria=JOptionPane.showInputDialog("")
+			
+			
+			
+		} while (condition);
+	}
+}

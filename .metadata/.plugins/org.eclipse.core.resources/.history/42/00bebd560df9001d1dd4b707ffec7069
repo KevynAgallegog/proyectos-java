@@ -1,0 +1,52 @@
+import javax.swing.JOptionPane;
+
+public class Empleados {
+	public static void main(String arg[]) {
+		
+		int categoria;
+		double pago;
+		double cat1=0.15;
+		double cat2=0.10;
+		double cat3=0.8;
+		double cat4 =0.0;
+		double desc1=0.02;
+		double desc2=0.015;
+		double desc3=0.01;
+		double desc4=0.0;
+		double pagoFinal1;
+		double pagoFinal2;
+		double pagoFinal3;
+		double pagoFinal4;
+		String resp="";
+		
+		
+		do {
+			categoria=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la categoria "));
+			pago=Double.parseDouble(JOptionPane.showInputDialog("ingrese su pago"));
+			 switch (categoria) {
+			case 1:
+				pagoFinal1=(pago+pago)*(cat1-pago)*desc1;
+				System.out.println(pagoFinal1);
+				break;
+			case 2:
+				pagoFinal2=(pago+pago)*(cat2-pago)*desc2;
+				System.out.println(pagoFinal2);
+				break;
+			case 3:
+				pagoFinal3=(pago+pago)*(cat3-pago)*desc3;
+				System.out.println(pagoFinal3);
+				break;
+			case 4:
+				pagoFinal4=(pago+pago)*(cat4-pago)*desc4;
+				System.out.println(pagoFinal4);
+				break;	
+
+			default:
+				break;
+			}
+			
+			 resp=JOptionPane.showInputDialog("Desea seguir continuando? si/no");
+			
+		} while (resp.equalsIgnoreCase("si"));
+	}
+}

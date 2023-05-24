@@ -1,0 +1,108 @@
+
+
+	import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+	public class Mascota {
+
+		String nombre;
+		String especie;
+		int edad;
+		String identidad;
+		modeloDatos midta;
+		ArrayList<String>lista;
+		
+		
+		
+		public Mascota() {
+			midta=new modeloDatos();
+			iniciar();
+		
+			
+		}
+		
+		public void iniciar() {
+			
+			int resp=0;
+			
+			
+			do {
+				ingresoDatos();
+				//System.out.println("repet");
+				resp = JOptionPane.showConfirmDialog(null, "Quiere Registrar otra Mascota?", "WARNING",
+				        JOptionPane.YES_NO_OPTION);
+				System.out.println("option " + resp   + (resp != 1));
+			} while (resp != 1);
+			
+			midta.imprimir();
+			
+		
+			int opc;
+				do {
+					opc=Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion  \n"
+							+"1. Registrar Mascota \n"
+							+"2. Mostrar Informacion \n"
+							+"3. Mostrar Sonido \n"
+							+"4. Caonsuta mascotas "));
+					
+					switch (opc) {
+					case 1:
+						ingresoDatos();
+						break;
+					case 2:
+						
+						break;	
+					case 4:
+						String ide=JOptionPane.showInputDialog("Ingrese la identidad para consultar");
+						midta.consultarMascota(ide);
+						break;		
+
+					default:
+						break;
+					}
+				} while (opc!=6);
+				
+			
+		}
+		
+	
+		
+			
+			
+		
+		
+		
+		
+		private void ingresoDatos() {
+			
+			lista=new ArrayList<String>();
+			String identidad=JOptionPane.showInputDialog("ingrese una identidad para la mascota");
+			String nombre=JOptionPane.showInputDialog("Ingrese el nombre de la mascota");
+			String edad=JOptionPane.showInputDialog("Ingrese la edad de la mascota");
+			String especie=JOptionPane.showInputDialog("Ingrese la raza de la mascota");
+			lista.add(identidad);
+			lista.add(nombre);
+			lista.add(edad);
+			lista.add(especie);
+	
+		
+			
+			
+			
+			
+			
+		}
+		
+		
+	
+		}
+				
+			
+		
+			
+			 
+		
+		
+	
+
+

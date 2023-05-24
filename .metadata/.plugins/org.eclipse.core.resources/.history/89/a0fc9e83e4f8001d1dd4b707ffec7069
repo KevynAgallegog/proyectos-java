@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
+public class modeloDatos {
+	
+	
+
+
+	//public void modificarMascota(String idMascota) {
+		
+		//if(mapaMascotas.containsKey(idMascota)) {
+//			Mascota tempMascota = mapaMascotas.get(idMascota)
+		//}
+		
+	}
+	
+
+

@@ -1,0 +1,35 @@
+import java.util.HashMap;
+
+public class Principal {
+	public static void main(String arg[]) {
+		//new Mascota().iniciar();
+		
+		
+		HashMap<String,Mascota>  listMascotas = new HashMap<String,Mascota>();
+		
+		Mascota m1 = new Mascota();
+		m1.nombre = "Luna";
+		m1.especie = "rara";
+		m1.identidad = "1234567";
+		
+		Mascota m2 = new Mascota();
+		m2.nombre = "lupe";
+		m2.especie = "rara";
+		m2.identidad = "123456789";
+		
+		listMascotas.put("1234567", m1);
+		listMascotas.put("123456789",m2);
+		
+		System.out.println(" Tamaño "+ listMascotas.size());
+		
+		listMascotas.forEach((identificacion,mascota)->{
+			System.out.println(mascota.nombre + " " + mascota.especie + " " + mascota.identidad );
+			
+			
+			System.out.println(" --------------------");
+		});
+		
+	}
+}
+
+

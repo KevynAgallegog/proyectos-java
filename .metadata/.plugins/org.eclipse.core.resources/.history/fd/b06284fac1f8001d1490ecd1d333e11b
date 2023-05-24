@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
+public class modeloDatos {
+	HashMap<String, ArrayList<String>>mapaMascotas;
+
+	public modeloDatos() {
+		
+		mapaMascotas=new HashMap<String,ArrayList<String>>();
+		
+	}
+	
+	public void consultarMascota(String identidad) {
+		if (mapaMascotas.containsKey(identidad)) {
+			System.out.println(mapaMascotas.get(identidad));
+		}else {
+			JOptionPane.showMessageDialog(null, "No existe","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+		}
+	}
+	public HashMap<String, ArrayList<String>>getMapaMascotas(){
+		
+		return mapaMascotas;
+	};
+	
+	public void guardarDatos(ArrayList<String>lista) {
+		mapaMascotas.put(lista.get(0), lista);
+		JOptionPane.showMessageDialog(null, "Registro exitoso");
+	}
+	
+	public void imprimir() {
+		System.out.println(mapaMascotas);
+	}
+}

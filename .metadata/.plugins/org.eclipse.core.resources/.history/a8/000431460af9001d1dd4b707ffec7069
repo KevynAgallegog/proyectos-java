@@ -1,0 +1,19 @@
+import javax.swing.JOptionPane;
+
+public class NumerosCero {
+	public static void main(String arg[]) {
+		String sigue;
+		int div;
+		do {
+			int numero=Integer.parseInt(JOptionPane.showInputDialog("ingrese numero"));
+			for (int i = 1; i < numero; i++) {
+				div=(i/2);
+				System.out.println(div);
+			}
+			sigue=JOptionPane.showInputDialog("desea seguir continuando si/no");
+			
+			
+			
+		} while (sigue.equalsIgnoreCase("si"));
+	}
+}

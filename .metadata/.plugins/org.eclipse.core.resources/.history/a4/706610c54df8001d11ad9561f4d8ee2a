@@ -1,0 +1,114 @@
+
+
+	import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
+	public class Mascota {
+
+		String nombre;
+		String especie;
+		int edad;
+		String identidad;
+		HashMap<String, Mascota>mapaMascotas=new HashMap<>();
+		
+		
+		
+		public Mascota() {
+
+		
+			
+		}
+		
+		public void iniciar() {
+			
+			int resp=0;
+			
+			
+			do {
+				ingresoDatos();
+				System.out.println("repet");
+				resp = JOptionPane.showConfirmDialog(null, "Quiere Registrar otra Mascota?", "WARNING",
+				        JOptionPane.YES_NO_OPTION);
+				System.out.println("option " + resp   + (resp != 1));
+			} while (resp != 1);
+			
+		
+			int opc;
+				do {
+					opc=Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion  \n"
+							+"1. Registrar Mascota \n"
+							+"2. Mostrar Informacion \n"
+							+"3. Mostrar Sonido \n"
+							+"4. Caonsuta mascotas "));
+					
+					switch (opc) {
+					case 1:
+						ingresoDatos();
+						break;
+					case 2:
+						mostrarInformacion();
+						break;	
+					case 4:
+						mostrarInformacion();
+						break;		
+
+					default:
+						break;
+					}
+				} while (opc!=6);
+				
+			
+		}
+		
+		public void mostrarInformacion() {
+			
+			for (Mascota mascota : mapaMascotas.values()) {
+				System.out.println("identidad: "+mascota.identidad);
+				System.out.println("Nombre: "+mascota.nombre);
+				System.out.println("Raza: "+mascota.especie);
+				System.out.println("Edad: "+mascota.edad);
+			}
+			}
+		
+			
+			
+		
+		
+		
+		private void ingresoDatos() {
+			
+			Mascota mascota1=new Mascota();
+			mascota1.identidad=JOptionPane.showInputDialog("Ingrese una identidad para la mascota");
+			mascota1.nombre=JOptionPane.showInputDialog("Ingrese el nombre de la mascota");
+			mascota1.especie=JOptionPane.showInputDialog("Ingrese Raza de la mascota");
+			mascota1.edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad de la mascota"));
+			mapaMascotas.put(mascota1.identidad,mascota1);
+			System.out.println(mapaMascotas);
+		
+		
+	
+		
+			
+			
+			
+			
+			
+		}
+		
+		public void consultaMascotas(String identidad) {
+			identidad=JOptionPane.showInputDialog("ingrese la identidad de la mascota para  consultar")
+			 
+			 if (mapaMascotas.containsKey(identidad)) {
+				System.out.println(mapaMascotas.get(identidad));
+			}else {
+				JOptionPane.showInternalInputDialog(null, "identidad no existe ","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+			}
+				
+			}
+			 
+		}
+		
+	
+
+

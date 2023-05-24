@@ -1,0 +1,126 @@
+
+
+	import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+	public class Mascota {
+
+		modeloDatos midta;
+		ArrayList<String>lista;
+		String identidad;
+		String nombre;
+		String edad;
+		String especie;
+		
+		
+		
+		public Mascota() {
+			midta=new modeloDatos();
+			iniciar();
+		
+			
+		}
+		
+		public void iniciar() {
+			
+			int resp=0;
+			
+			
+			do {
+				ingresoDatos();
+				//System.out.println("repet");
+				resp = JOptionPane.showConfirmDialog(null, "Quiere Registrar otra Mascota?", "WARNING",
+				        JOptionPane.YES_NO_OPTION);
+				System.out.println("option " + resp   + (resp != 1));
+			} while (resp != 1);
+			
+			midta.imprimir();
+			
+		
+			int opc;
+				do {
+					opc=Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion  \n"
+							+"1. Registrar Mascota \n"
+							+"2. Mostrar Informacion de los registrados\n"
+							+"3. Mostrar Sonido \n"
+							+"4. Consultar mascotas \n "
+							+"5. Movimientos \n"
+							+"6 Comida que consume "));
+					
+					switch (opc) {
+					case 1:
+						ingresoDatos();
+						break;
+					case 2:
+						midta.imprimir();
+						break;	
+					case 3:
+							
+						mostrarSonidos();
+						break;	
+					case 4:
+						String ide=JOptionPane.showInputDialog("Ingrese la identidad para consultar");
+						midta.consultarMascota(ide);
+						break;		
+
+					default:
+						break;
+					}
+				} while (opc!=6);
+				
+			
+		}
+		
+	
+		
+			
+			
+		
+		
+		
+		
+		private void ingresoDatos() {
+			
+			lista=new ArrayList<String>();
+			 identidad=JOptionPane.showInputDialog("ingrese una identidad para la mascota");
+			nombre=JOptionPane.showInputDialog("Ingrese el nombre de la mascota");
+			 edad=JOptionPane.showInputDialog("Ingrese la edad de la mascota");
+			 especie=JOptionPane.showInputDialog("Ingrese la especie de la mascota");
+			lista.add(identidad);
+			lista.add(nombre);
+			lista.add(edad);
+			lista.add(especie);
+			midta.guardarDatos(lista);
+			JOptionPane.showInternalMessageDialog(null, "Identidad: "+identidad + "\n"
+					+"Nombre: "+nombre + "\n"
+					+"Edad: "+ edad + "\n"
+					+"Especie: "+ especie + "\n");
+	
+			
+		}
+		public void mostrarSonidos() {
+			 especie=JOptionPane.showInputDialog("Ingrese la especie de la mascota");
+			if (especie.equalsIgnoreCase("Perro")) {
+				JOptionPane.showMessageDialog(null, "¡Guau guau!");
+			}else if(especie.equalsIgnoreCase("Gato")) {
+				JOptionPane.showMessageDialog(null, "¡Miau miau!");
+			}else if(especie.equalsIgnoreCase("Gallo")) {
+				JOptionPane.showMessageDialog(null, "¡KIkiriki!!");
+			}else {
+				System.out.println("No tiene sonidos conocidos");
+			}
+		}
+		
+		
+	
+		}
+				
+			
+		
+			
+			 
+		
+		
+	
+
+
